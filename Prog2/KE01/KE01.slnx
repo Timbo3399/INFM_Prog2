@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="KE01_AG01/KE01_AG01.vcxproj" Id="48846060-6bde-4f62-90d9-c6fe797d1cb9" />
+  <Project Path="KE01_AG02/KE01_AG02.vcxproj" Id="08ed27dd-cd9b-4d1c-9fe9-f07b5f14b0fa" />
+  <Project Path="KE01_AG03/KE01_AG03.vcxproj" Id="14153b6b-e5cf-4449-beef-03ac001b2a5a" />
+</Solution>
