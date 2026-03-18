@@ -4,4 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="KE02_AG01/KE02_AG01.vcxproj" Id="e59db40c-5c1e-4eaf-a7cb-50b0ecb2d8bf" />
+  <Project Path="KE02_AG02/KE02_AG02.vcxproj" Id="073ab520-ea28-4379-ade2-a769d20e93ad" />
 </Solution>
