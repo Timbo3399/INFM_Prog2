@@ -33,10 +33,5 @@ namespace WindowsFormsApp1
 
             label1.Text = (num1 + num2).ToString();
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
