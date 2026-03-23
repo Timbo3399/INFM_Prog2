@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main(void)
+void main(void)
 {
 	int iVarA;
 	printf("Enter iVarA: ");
