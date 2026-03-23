@@ -14,9 +14,9 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\..\..\..\Downloads\Utilities\Utilities.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Utilities.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="$(MSBuildThisFileDirectory)..\..\..\..\..\..\Downloads\Utilities\Utilities.lib" />
+    <Library Include="$(MSBuildThisFileDirectory)Utilities.lib" />
   </ItemGroup>
 </Project>
