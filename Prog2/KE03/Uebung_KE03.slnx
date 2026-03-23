@@ -4,4 +4,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="KE03_AG01/KE03_AG01.vcxproj" Id="0bedca42-a4df-40b9-bf57-9a6d95d070b1" />
+  <Project Path="KE03_AG02/KE03_AG02.vcxproj" Id="4e9918bb-ae57-4bd4-a4c5-c984c3d9c1fc" />
+  <Project Path="KE03_AG03/KE03_AG03.vcxproj" Id="0a840151-e20f-4168-a5ba-5a39c0e48da2" />
+  <Project Path="Utilities/Utilities.vcxitems" Id="ee07c971-c889-4a68-b06c-bf25e8ff99a3" />
 </Solution>
