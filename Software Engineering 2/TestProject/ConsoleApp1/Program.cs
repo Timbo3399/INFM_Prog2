@@ -14,7 +14,6 @@ namespace ConsoleApp1
 
             test.doIt();
 
-            Console.ReadLine();
         }
     }
 }
