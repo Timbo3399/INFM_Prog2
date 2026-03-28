@@ -10,6 +10,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+            var s = Singleton.Instance;
+
+
             var test = new Class1();
 
             test.doIt();

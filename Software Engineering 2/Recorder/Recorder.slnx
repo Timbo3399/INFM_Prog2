@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RecorderUI/RecorderUI.csproj" Id="aaa90c87-16e7-4f0e-877f-84fcfe67593b" />
+  <Project Path="Tape/Tape.csproj" Id="624c1d49-a566-4efd-a5fe-a8e36a411a11" />
+  <Project Path="VideoRecorder/VideoRecorder.csproj" Id="cf0869f9-1d44-4387-8b42-9be2df4db30e" />
+</Solution>
