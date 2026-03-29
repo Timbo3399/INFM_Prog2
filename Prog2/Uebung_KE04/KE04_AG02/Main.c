@@ -2,16 +2,16 @@
 
 unsigned int uiIsCorrectDate(unsigned int uiDay, unsigned int uiMonth, unsigned int uiYear);
 unsigned int uiIsLeapYear(unsigned int uiYear);
-int iMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear);
+unsigned int uiMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear);
 
-void main(void)
+int main(void)
 {
 	unsigned int uiTag;
 	unsigned int uiMonat;
 	unsigned int uiJahr;
 
 	printf("Tag: ");
-	scanf_s("%u", &uiTag);
+	scanf_s(" %u", &uiTag);
 
 	printf("\nMonat: ");
 	scanf_s("%u", &uiMonat);
@@ -19,32 +19,50 @@ void main(void)
 	printf("\nJahr: ");
 	scanf_s("%u", &uiJahr);
 
-	printf("\nDas Datum ist %s.\n", uiIsCorrectDate(uiTag, uiMonat, uiJahr) ? "korrekt" : "nicht korrekt");
+	switch (uiIsCorrectDate(uiTag, uiMonat, uiJahr))
+	{
+		case 1:
+			printf("\nDas Datum ist korrekt.");
+			break;
+		case 2:
+			printf("\nDer Monat ist nicht korrekt.");
+			break;
+		case 3:
+			printf("\nDas Jahr ist nicht korrekt.");
+			break;
+		case 4:
+			printf("\nDer Tag ist nicht korrekt.");
+			break;
+		default:
+			printf("\nUnbekannter Fehler.");
+			break;
+	}
+	return 0;
 }
 
 unsigned int uiIsCorrectDate(unsigned int uiDay, unsigned int uiMonth, unsigned int uiYear)
 {
-	if (1 <= uiMonth <=12)
+    if (uiMonth >= 1 && uiMonth <= 12)
 	{
-		if (1900 <= uiYear)
+		if (uiYear >= 1900)
 		{
-			if (1<= uiDay <= iMaxDaysInMonth(uiMonth, uiYear))
+			if (uiDay >= 1 && uiDay <= uiMaxDaysInMonth(uiMonth, uiYear))
 			{
 				return 1;
 			}
 			else
 			{
-				return 0;
+				return 4;
 			}
 		}
 		else
 		{
-			return 0;
+			return 3;
 		}
 	}
 	else
 	{
-		return 0;
+		return 2;
 	}
 
 }
@@ -75,7 +93,7 @@ unsigned int uiIsLeapYear(unsigned int uiYear)
 	}
 }
 
-int iMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear)
+unsigned int uiMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear)
 {
 	switch (uiMonth)
 	{
@@ -108,3 +126,16 @@ int iMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear)
 		break;
 	}
 }
+
+
+/*
+ * Bestimmen Sie mit Testwell CMT v(G), LOCpro und mittels eigener Rechnung c% Ihrer Funktionen
+ * 
+ *	| Funktion         | v(G) | LOCpro | Kommentare | c % |
+ *	| ---------------- | ---- | ------ | ---------- | --- |
+ *	| main             | 5    | 23     | 0          | 0%  |
+ *	| uiIsCorrectDate  | 6    | 9      | 0          | 0%  |
+ *	| uiIsLeapYear     | 4    | 10     | 0          | 0%  |
+ *	| uiMaxDaysInMonth | 5    | 20     | 0          | 0%  |
+ * 
+ */
