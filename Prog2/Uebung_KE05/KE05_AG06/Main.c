@@ -10,12 +10,7 @@ struct Employee
 
 int main(void)
 {
-	struct Employee s_employee[ARRAY_LEN]= 
-	{
-		{"Timo","Lahres",25},
-		{"TestFirst","TestLast",99},
-		{"Test2First","Test2Last",42}
-	}; 
+	struct Employee s_employee[ARRAY_LEN] = {0}; 
 
 	for (int i = 0; i<ARRAY_LEN;i++)
 	{
