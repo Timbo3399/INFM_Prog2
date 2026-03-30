@@ -1,8 +1,8 @@
 #include <stdio.h>
-
+#define FirstName_LEN (20)
 int main(void)
 {
-	char acFirstName[20];
+	char acFirstName[FirstName_LEN];
 
 	//Example
 	acFirstName[0] = 'T';
