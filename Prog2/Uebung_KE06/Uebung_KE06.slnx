@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="KE06_AG01/KE06_AG01.vcxproj" />
+  <Project Path="KE06_AG02/KE06_AG02.vcxproj" />
+</Solution>
