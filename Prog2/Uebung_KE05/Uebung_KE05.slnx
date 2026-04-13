@@ -3,11 +3,11 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="KE05_AG01/KE05_AG01.vcxproj" />
-  <Project Path="KE05_AG02/KE05_AG02.vcxproj" />
-  <Project Path="KE05_AG03/KE05_AG03.vcxproj" />
-  <Project Path="KE05_AG04/KE05_AG04.vcxproj" />
-  <Project Path="KE05_AG05/KE05_AG05.vcxproj" />
-  <Project Path="KE05_AG06/KE05_AG06.vcxproj" />
-  <Project Path="KE05_AG07/KE05_AG07.vcxproj" />
+  <Project Path="KE05_AG01/KE05_AG01.vcxproj" Id="3939ee9e-e147-4e69-b89f-b0db6f13140a" />
+  <Project Path="KE05_AG02/KE05_AG02.vcxproj" Id="ed4095d8-a41c-435c-8bd3-206c9d2b0e67" />
+  <Project Path="KE05_AG03/KE05_AG03.vcxproj" Id="cad33538-7c7e-4112-bf5a-bf4c9d442aa7" />
+  <Project Path="KE05_AG04/KE05_AG04.vcxproj" Id="bf265a23-1ef4-44dd-80c5-3d7994d32426" />
+  <Project Path="KE05_AG05/KE05_AG05.vcxproj" Id="eeabf260-d0c9-44be-a9a6-00205184ae24" />
+  <Project Path="KE05_AG06/KE05_AG06.vcxproj" Id="0b2707fd-b2de-47cd-a371-59ec6283783e" />
+  <Project Path="KE05_AG07/KE05_AG07.vcxproj" Id="e88e12a9-30f7-4604-b8e1-620306a56556" />
 </Solution>
