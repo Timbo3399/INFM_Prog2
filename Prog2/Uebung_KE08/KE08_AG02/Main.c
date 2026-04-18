@@ -441,5 +441,45 @@ int DeleteElementFront(ppsNode_t ppsAnchor)
 
 int DeleteElementAt(ppsNode_t ppsAnchor, unsigned int uiPos)
 {
-	
+    int iRet = -1;
+    unsigned int uiNumberElements = 0U;
+    psNode_t psNodeActual = NULL;
+    psNode_t psNodeLast = NULL;
+    unsigned int uiCurrentPos = 0U;
+
+    if ((ppsAnchor != NULL) && (*ppsAnchor != NULL))
+    {
+        uiNumberElements = GetNumberElements(*ppsAnchor);
+
+        if (uiPos <= uiNumberElements)
+        {
+            if (uiPos == 0U)
+            {
+                iRet = DeleteElementFront(ppsAnchor);
+            }
+            if ((uiPos == uiNumberElements) && (uiPos != 0U))
+            {
+                iRet = DeleteElementBack(ppsAnchor);
+            }
+            if ((uiPos > 0U) && (uiPos < uiNumberElements))
+            {
+                psNodeActual = *ppsAnchor;
+                psNodeLast = psNodeActual;
+
+                while (uiCurrentPos != uiPos)
+                {
+                    psNodeLast = psNodeActual;
+                    psNodeActual = psNodeActual->psNextNode;
+                    uiCurrentPos++;
+                }
+                
+                psNodeLast->psNextNode = psNodeActual->psNextNode;
+
+                free(psNodeActual);
+                
+                iRet = 0;
+            }
+        }
+    }
+    return iRet;
 }
