@@ -11,22 +11,35 @@ typedef struct Address
 }sAddress_t;
 typedef sAddress_t* psAddress_t;
 
-
+//Was wird jetzt ausgegeben? 
+//0
 
 int main(void)
 {
 	sAddress_t asAllAddress[ARRAYL_LEN] = {0};
-	psAddress_t psAdress = asAllAddress;
+	psAddress_t psAddress = asAllAddress;
 
 	for (int i = 0;i<ARRAYL_LEN;i++)
 	{
-		psAdress->uiZipCode += i;
-		psAdress++;
+		psAddress->uiZipCode += i;
+		psAddress++;
 	}
 
 	for (int i = 0;i < ARRAYL_LEN;i++)
 	{
 		printf("%i\n",asAllAddress[i].uiZipCode);
 	}
+
+	psAddress = &asAllAddress[2];
+
+	printf("%u\n", psAddress->uiZipCode);
+
+	psAddress += 2;
+
+	printf("%u\n",psAddress->uiZipCode);
+
+	psAddress += 3;
+	printf("%u\n", psAddress->uiZipCode);
+
 	return 0;
 }
