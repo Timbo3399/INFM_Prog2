@@ -3,9 +3,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="KE08_AG01/KE08_AG01.vcxproj" />
-  <Project Path="KE08_AG02/KE08_AG02.vcxproj" />
-  <Project Path="KE08_AG03/KE08_AG03.vcxproj" />
-  <Project Path="KE08_AG04/KE08_AG04.vcxproj" />
-  <Project Path="KE08_AG05/KE08_AG05.vcxproj" />
+  <Project Path="KE08_AG01/KE08_AG01.vcxproj" Id="ecf9b222-37b0-4fd2-95c2-7193db60e931" />
+  <Project Path="KE08_AG02/KE08_AG02.vcxproj" Id="1e5465d9-8924-4777-9b87-231cc4187bd3" />
+  <Project Path="KE08_AG03/KE08_AG03.vcxproj" Id="8652f91b-1225-4719-8860-962b44797148" />
+  <Project Path="KE08_AG04/KE08_AG04.vcxproj" Id="2c6e8001-16a4-4cda-9cf8-f729168c9a27" />
+  <Project Path="KE08_AG05/KE08_AG05.vcxproj" Id="c4775a70-d5d7-41ff-ad1f-e9e51d1da2c7" />
 </Solution>
