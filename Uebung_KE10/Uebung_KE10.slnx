@@ -4,4 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="KE10_AG01/KE10_AG01.vcxproj" />
+  <Project Path="KE10_AG02/KE10_AG02.vcxproj" />
 </Solution>
