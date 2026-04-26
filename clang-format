@@ -1,0 +1,46 @@
+# .clang-format – Hochschule Offenburg C/C++ Coding Style Guide V3.0.12
+# Matches rules: A1, CL1, CL2, CL3, CL4, CL5, CL6
+
+Language: Cpp
+BasedOnStyle: LLVM
+
+# A1 – 3 spaces indentation, no tabs
+UseTab: Never
+IndentWidth: 3
+TabWidth: 3
+
+# CL1 + CL6 – Opening brace on new line (Allman style)
+BreakBeforeBraces: Allman
+
+# CL2 – Indent inside braces
+IndentCaseLabels: true
+
+# CL3 – Space after keywords (if, while, for, switch)
+SpaceBeforeParens: ControlStatements
+
+# CL4 – No space before function call parenthesis
+SpaceBeforeParens: ControlStatements
+
+# CL5 – Spaces around binary operators
+SpaceBeforeAssignmentOperators: true
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceAfterCStyleCast: false
+SpaceBeforeCpp11BracedList: false
+
+# DV5 – Pointer alignment: attach * to type
+PointerAlignment: Left
+
+# General readability
+ColumnLimit: 120
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+
+# DV4 – One declaration per line (clang-format can't fully enforce, but helps)
+BinPackParameters: false
+BinPackArguments: false
+
+# Sorting includes (A8)
+SortIncludes: false
