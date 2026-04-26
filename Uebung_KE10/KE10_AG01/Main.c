@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    char cAppendex = ' ';
+    char appendix = ' ';
 
     if (argc != 4)
     {
@@ -13,12 +13,10 @@ int main(int argc, char *argv[])
     }
 
     for (int i = 1; i < argc; ++i) {
-        for (char* p = argv[i]; *p; ++p)
-        {
-            if (*p == ',')
-            {
+        for (char *p = argv[i]; *p; ++p) {
+            if (*p == ',') {
                 *p = '.';
-                cAppendex = '?';
+                appendix = '?';
             }
         }
     }
@@ -45,17 +43,12 @@ int main(int argc, char *argv[])
     int ac = fabs(a - c) <= eps;
     int bc = fabs(b - c) <= eps;
 
-    if (ab && ac && bc)
-    {
-        printf("gleichseitig%c\n", cAppendex);
-    }
-    else if (ab || ac || bc)
-    {
-        printf("gleichschenklig%c\n", cAppendex);
-    }
-    else
-    {
-        printf("normal%c\n", cAppendex);
+    if (ab && ac && bc) {
+        printf("gleichseitig%c\n", appendix);
+    } else if (ab || ac || bc) {
+        printf("gleichschenklig%c\n", appendix);
+    } else {
+        printf("normal%c\n", appendix);
     }
 
     return 0;

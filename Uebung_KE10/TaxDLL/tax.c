@@ -1,5 +1,6 @@
-#include "pch.h"
+#define TAX_DLL
 #include "tax.h"
+#include "pch.h"
 
 double GetValueAddedTax(void)
 {
