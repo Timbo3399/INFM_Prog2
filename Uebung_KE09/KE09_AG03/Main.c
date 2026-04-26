@@ -43,4 +43,6 @@ int main(void)
 	// Wait for user interaction
 	_getch();
 	return EXIT_SUCCESS;
+
+   return 0;
 }
