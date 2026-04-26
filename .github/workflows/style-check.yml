@@ -1,0 +1,105 @@
+name: C/C++ Code Style Check
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  # ──────────────────────────────────────────────
+  # 1. clang-format: Layout rules (CL1–CL6, A1)
+  # ──────────────────────────────────────────────
+  clang-format:
+    name: "Format Check (clang-format)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get install -y clang-format
+
+      - name: Run clang-format check
+        run: |
+          echo "Checking formatting against .clang-format rules..."
+          FILES=$(find . -name "*.c" -o -name "*.h" -o -name "*.cpp" -o -name "*.hpp" \
+                  | grep -v ".github" | grep -v "build/")
+          if [ -z "$FILES" ]; then
+            echo "No C/C++ files found."
+            exit 0
+          fi
+          FAILED=0
+          for FILE in $FILES; do
+            DIFF=$(clang-format --style=file "$FILE" | diff "$FILE" -)
+            if [ -n "$DIFF" ]; then
+              echo "❌ Formatting issue in: $FILE"
+              echo "$DIFF"
+              FAILED=1
+            fi
+          done
+          if [ $FAILED -eq 1 ]; then
+            echo ""
+            echo "Fix by running: clang-format --style=file -i <file>"
+            exit 1
+          fi
+          echo "✅ All files are correctly formatted."
+
+  # ──────────────────────────────────────────────
+  # 2. cppcheck: Static analysis
+  #    Catches: DV13, DV14, DV16, DV17, DV18, F13, K rules
+  # ──────────────────────────────────────────────
+  cppcheck:
+    name: "Static Analysis (cppcheck)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cppcheck
+        run: sudo apt-get install -y cppcheck
+
+      - name: Run cppcheck
+        run: |
+          echo "Running cppcheck static analysis..."
+          cppcheck \
+            --enable=all \
+            --error-exitcode=1 \
+            --suppress=missingIncludeSystem \
+            --suppress=unmatchedSuppression \
+            --inline-suppr \
+            --force \
+            --std=c99 \
+            --template="{file}:{line}: [{severity}] {id}: {message}" \
+            $(find . -name "*.c" -o -name "*.cpp" | grep -v build/) \
+            2>&1 | tee cppcheck-report.txt
+          
+          if grep -q "error" cppcheck-report.txt; then
+            echo "❌ cppcheck found errors."
+            exit 1
+          fi
+          echo "✅ cppcheck passed."
+
+  # ──────────────────────────────────────────────
+  # 3. Custom Python checks for style guide rules
+  #    that clang-format / cppcheck cannot cover:
+  #    A4, A6, A7, DV4, DV8, DV9, DV10, K1, K2,
+  #    K5, K8, K11, K13, K14, F4, F5, P2, P3
+  # ──────────────────────────────────────────────
+  custom-style-check:
+    name: "Custom Style Rules Check"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run custom style checker
+        run: python3 .github/scripts/check_style.py
+
+  # ──────────────────────────────────────────────
+  # 4. Summary job – all checks must pass
+  # ──────────────────────────────────────────────
+  all-checks:
+    name: "All Checks Passed"
+    needs: [clang-format, cppcheck, custom-style-check]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Done
+        run: echo "✅ All style checks passed successfully."
