@@ -4,10 +4,23 @@
 
 int main(int argc, char *argv[])
 {
+    char cAppendex = ' ';
+
     if (argc != 4)
     {
-        printf("Aufruf: %s seite1 seite2 seite3\n", argv[0]);
+        printf("Aufruf: %s Zu wenig Parameter\n", argv[0]);
         return 1;
+    }
+
+    for (int i = 1; i < argc; ++i) {
+        for (char* p = argv[i]; *p; ++p)
+        {
+            if (*p == ',')
+            {
+                *p = '.';
+                cAppendex = '?';
+            }
+        }
     }
 
     double a = atof(argv[1]);
@@ -18,13 +31,13 @@ int main(int argc, char *argv[])
 
     if (a <= eps || b <= eps || c <= eps)
     {
-        printf("Fehler: Alle Seiten müssen > 0 sein.\n");
+        printf("kein Dreieck\n");
         return 2;
     }
 
     if (! ( (a + b) > c + eps && (a + c) > b + eps && (b + c) > a + eps ))
     {
-        printf("Fehler: Die Seitenlängen erfüllen nicht die Dreiecksungleichung.\n");
+        printf("kein Dreieck\n");
         return 3;
     }
 
@@ -34,15 +47,15 @@ int main(int argc, char *argv[])
 
     if (ab && ac && bc)
     {
-        printf("gleichseitig\n");
+        printf("gleichseitig%c\n", cAppendex);
     }
     else if (ab || ac || bc)
     {
-        printf("gleichschenklig\n");
+        printf("gleichschenklig%c\n", cAppendex);
     }
     else
     {
-        printf("normal\n");
+        printf("normal%c\n", cAppendex);
     }
 
     return 0;
