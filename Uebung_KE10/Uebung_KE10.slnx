@@ -5,4 +5,5 @@
   </Configurations>
   <Project Path="KE10_AG01/KE10_AG01.vcxproj" />
   <Project Path="KE10_AG02/KE10_AG02.vcxproj" />
+  <Project Path="TaxDLL/TaxDLL.vcxproj" Id="d9b4c5bc-f6c9-4b1c-8130-4ef4e0366dbf" />
 </Solution>
