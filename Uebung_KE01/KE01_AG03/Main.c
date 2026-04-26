@@ -1,37 +1,34 @@
 #include <stdio.h>
 
-void main()
+// Main function
+int main(void)
 {
-	char cVal = 'x';
-	short int siVal = 1;
-	int iVal = 123456;
-	float fVal = 1.23f;
-	double dVal = 3.14156;
+   // Declare variables
+   char cVal = 'x';
+   short int siVal = 1;
+   int iVal = 123456;
+   float fVal = 1.23f;
+   double dVal = 3.14156;
 
-	printf("%c\n", cVal);
-	printf("%i\n", siVal);
-	printf("%i\n", iVal);
-    printf("%.2f\n", fVal);
-	printf("%f\n", dVal);
+   // Print values
+   printf("%c\n", cVal);
+   printf("%i\n", siVal);
+   printf("%i\n", iVal);
+   printf("%.2f\n", fVal);
+   printf("%f\n", dVal);
 
-	const int ciVal = 5;
+   // Declare constant
+   const int ciVal = 5;
 
-	printf("%i\n", ciVal);
+   // Print constant
+   printf("%i\n", ciVal);
 
-	/*
-	Was passiert beim Compilieren, wenn Sie bei der Definition der konstanten Variablen dieser keinen Wert zuweisen?
-	
+   // What happens when compiling if you do not assign a value to the constant variable definition?
+   // Warning: Local Variable 'ciVal' is uninitialized
 
-	Warning: Local Variable 'ciVal' is uninitialized
-	
-	*/
+   // Is it possible to change the value afterwards?
+   // No, since ciVal is declared as const, its value cannot be changed after initialization. Attempting to change the value would lead to a compilation error.
 
-	/*
-	Ist es möglich danach den Wert zu ändern? 
-
-
-	Nein, da ciVal als const deklariert ist, kann sein Wert nach der Initialisierung nicht mehr geändert werden. Ein Versuch, den Wert zu ändern, würde zu einem Kompilierungsfehler führen.
-
-	*/
-
+   // Return success
+   return 0;
 }

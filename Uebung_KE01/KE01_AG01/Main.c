@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-void main() 
+// Main function
+int main(void)
 {
-	printf("Hello World");
+   // Print hello world
+   printf("Hello World");
+   // Return success
+   return 0;
 }

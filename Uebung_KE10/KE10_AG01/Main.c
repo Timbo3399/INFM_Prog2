@@ -2,54 +2,87 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char *argv[])
+// Main function to determine triangle type
+int main(int iArgc, char* pacArgv[])
 {
-    char appendix = ' ';
+   // Declare local variables
+   char cAppendix = ' ';
+   int iReturn = 0;
+   double dA = 0.0;
+   double dB = 0.0;
+   double dC = 0.0;
+   const double cdEps = 1e-9;
+   int bAb = 0;
+   int bAc = 0;
+   int bBc = 0;
 
-    if (argc != 4)
-    {
-        printf("Aufruf: %s Zu wenig Parameter\n", argv[0]);
-        return 1;
-    }
-
-    for (int i = 1; i < argc; ++i) {
-        for (char *p = argv[i]; *p; ++p) {
-            if (*p == ',') {
-                *p = '.';
-                appendix = '?';
+   // Check argument count
+   if (iArgc != 4)
+   {
+      printf("Call: %s Too few parameters\n", pacArgv[0]);
+      iReturn = 1;
+   }
+   else
+   {
+      // Replace commas with dots in arguments
+      for (int iI = 1; iI < iArgc; ++iI)
+      {
+         for (char* pcP = pacArgv[iI]; *pcP; ++pcP)
+         {
+            if (*pcP == ',')
+            {
+               *pcP = '.';
+               cAppendix = '?';
             }
-        }
-    }
+         }
+      }
 
-    double a = atof(argv[1]);
-    double b = atof(argv[2]);
-    double c = atof(argv[3]);
+      // Parse arguments to doubles
+      dA = atof(pacArgv[1]);
+      dB = atof(pacArgv[2]);
+      dC = atof(pacArgv[3]);
 
-    const double eps = 1e-9;
+      // Check if sides are positive
+      if (dA <= cdEps || dB <= cdEps || dC <= cdEps)
+      {
+         printf("not a triangle\n");
+         iReturn = 2;
+      }
+      else
+      {
+         // Check triangle inequality
+         if (!((dA + dB) > dC + cdEps && (dA + dC) > dB + cdEps && (dB + dC) > dA + cdEps))
+         {
+            printf("not a triangle\n");
+            iReturn = 3;
+         }
+         else
+         {
+            // Check for equal sides
+            bAb = fabs(dA - dB) <= cdEps;
+            bAc = fabs(dA - dC) <= cdEps;
+            bBc = fabs(dB - dC) <= cdEps;
 
-    if (a <= eps || b <= eps || c <= eps)
-    {
-        printf("kein Dreieck\n");
-        return 2;
-    }
+            // Determine triangle type
+            if (bAb && bAc && bBc)
+            {
+               printf("equilateral%c\n", cAppendix);
+            }
+            else
+            {
+               if (bAb || bAc || bBc)
+               {
+                  printf("isosceles%c\n", cAppendix);
+               }
+               else
+               {
+                  printf("scalene%c\n", cAppendix);
+               }
+            }
+         }
+      }
+   }
 
-    if (! ( (a + b) > c + eps && (a + c) > b + eps && (b + c) > a + eps ))
-    {
-        printf("kein Dreieck\n");
-        return 3;
-    }
-
-    int ab = fabs(a - b) <= eps;
-    int ac = fabs(a - c) <= eps;
-    int bc = fabs(b - c) <= eps;
-
-    if (ab && ac && bc) {
-        printf("gleichseitig%c\n", appendix);
-    } else if (ab || ac || bc) {
-        printf("gleichschenklig%c\n", appendix);
-    } else {
-        printf("normal%c\n", appendix);
-    }
-
-    return 0;
+   // Return result
+   return iReturn;
 }

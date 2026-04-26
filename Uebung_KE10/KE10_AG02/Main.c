@@ -3,18 +3,25 @@
 
 int main(void)
 {
-    double net = 0.0;
-    double vat = 0.0;
-    double gross = 0.0;
+   // Declare local variables
+   double dNet = 0.0;
+   double dVat = 0.0;
+   double dGross = 0.0;
 
-    printf("Nettowarenwert eingeben: ");
-    scanf_s("%lf", &net);
+   // Prompt user for net value input
+   printf("Enter net value: ");
+   scanf_s("%lf", &dNet);
 
-    vat = GetValueAddedTax();
-    gross = net * (1.0 + vat);
+   // Get value added tax
+   dVat = GetValueAddedTax();
+   // Calculate gross value
+   dGross = dNet * (1.0 + dVat);
 
-    printf("Mehrwertsteuer: %.2f %%\n", vat * 100);
-    printf("Bruttowarenwert: %.2f EUR\n", gross);
+   // Print value added tax
+   printf("Value added tax: %.2f %%\n", dVat * 100);
+   // Print gross value
+   printf("Gross value: %.2f EUR\n", dGross);
 
-    return 0;
+   // Return success
+   return 0;
 }
