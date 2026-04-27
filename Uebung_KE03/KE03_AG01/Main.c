@@ -50,13 +50,11 @@ double CalcAreaCircle(double dR)
 	return dResult;
 }
 
-/*
- * Stimmen Ihre implementierten Gleichungen?
- * Ja, bis auf die -1, da eine fläche nicht negativ sein kann.
- * 
- * Ein Radius von -1 soll nach Definition nicht möglich sein.
- * Warum fällt dies bei der Berechnung von A nicht sofort auf?
- * Es fällt nicht auf, da Minus mal Minus Plus ergebt und somit das Ergebnis positiv ist.
- */
+// * Stimmen Ihre implementierten Gleichungen?
+// * Ja, bis auf die -1, da eine fläche nicht negativ sein kann.
+// * 
+// * Ein Radius von -1 soll nach Definition nicht möglich sein.
+// * Warum fällt dies bei der Berechnung von A nicht sofort auf?
+// * Es fällt nicht auf, da Minus mal Minus Plus ergebt und somit das Ergebnis positiv ist.
 
 

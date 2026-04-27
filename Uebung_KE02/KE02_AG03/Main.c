@@ -31,15 +31,13 @@ void main()
 	printf("float: %.2f\n", fVar);
 	printf("double: %.2lf\n", dVar);
 
-	/*
-	Wird in diesem Fall gerundet? (Geben Sie 4.999 ein!)
-	Ja es wird gerundet, da die Ausgabe auf 2 Nachkommastellen formatiert ist. In diesem Fall würde 4.999 auf 5.00 gerundet werden.
-	*/
+	//Wird in diesem Fall gerundet? (Geben Sie 4.999 ein!)
+	//Ja es wird gerundet, da die Ausgabe auf 2 Nachkommastellen formatiert ist. In diesem Fall würde 4.999 auf 5.00 gerundet werden.
 
 	char acStr[100];
 	printf("Bitte gebe eine Zeichenkette ein: ");
 	scanf("%s", &acStr);
 
 	printf("Die eingegebene Zeichenkette ist: %s\n", acStr);
-	/*So gibt es nicht alles aus nur bis zu ersten Leerzeichen*/
+	//So gibt es nicht alles aus nur bis zu ersten Leerzeichen
 }

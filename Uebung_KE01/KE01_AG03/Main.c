@@ -7,7 +7,7 @@ int main(void)
    char cVal = 'x';
    short int siVal = 1;
    int iVal = 123456;
-   float fVal = 1.23f;
+   float fVal = 1.23F;
    double dVal = 3.14156;
 
    // Print values

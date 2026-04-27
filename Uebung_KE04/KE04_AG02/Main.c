@@ -42,59 +42,63 @@ int main(void)
 
 unsigned int uiIsCorrectDate(unsigned int uiDay, unsigned int uiMonth, unsigned int uiYear)
 {
+    unsigned int result = 0;
     if (uiMonth >= 1 && uiMonth <= 12)
 	{
 		if (uiYear >= 1900)
 		{
 			if (uiDay >= 1 && uiDay <= uiMaxDaysInMonth(uiMonth, uiYear))
 			{
-				return 1;
+				result = 1;
 			}
 			else
 			{
-				return 4;
+				result = 4;
 			}
 		}
 		else
 		{
-			return 3;
+			result = 3;
 		}
 	}
 	else
 	{
-		return 2;
+		result = 2;
 	}
-
+    return result;
 }
 
 unsigned int uiIsLeapYear(unsigned int uiYear)
 {
+    unsigned int result = 0;
 	if (uiYear % 4 == 0)
 	{
 		if (uiYear % 100 == 0)
 		{
 			if (uiYear % 400 == 0)
 			{
-				return 1;
+				result = 1;
 			}
 			else
 			{
-				return 0;
+				result = 0;
 			}
 		}
 		else
 		{
-			return 1;
+			result = 1;
 		}
 	}
 	else
 	{
-		return 0;
+		result = 0;
 	}
+    return result;
 }
 
 unsigned int uiMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear)
 {
+    unsigned int result = 0;
 	switch (uiMonth)
 	{
 	case 1:
@@ -104,38 +108,39 @@ unsigned int uiMaxDaysInMonth(unsigned int uiMonth, unsigned int uiYear)
 	case 8:
 	case 10:
 	case 12:
-		return 31;
+		result = 31;
 		break;
 	case 4:
 	case 6:
 	case 9:
 	case 11:
-		return 30;
+		result = 30;
 		break;
 	case 2:
 		if (uiIsLeapYear(uiYear))
 		{
-			return 29;
+			result = 29;
 		}
 		else
 		{
-			return 28;
+			result = 28;
 		}
+		break;
 	default:
-		return 0;
+		result = 0;
 		break;
 	}
+    return result;
 }
 
 
-/*
- * Bestimmen Sie mit Testwell CMT v(G), LOCpro und mittels eigener Rechnung c% Ihrer Funktionen
- * 
- *	| Funktion         | v(G) | LOCpro | Kommentare | c % |
- *	| ---------------- | ---- | ------ | ---------- | --- |
- *	| main             | 5    | 23     | 0          | 0%  |
- *	| uiIsCorrectDate  | 6    | 9      | 0          | 0%  |
- *	| uiIsLeapYear     | 4    | 10     | 0          | 0%  |
- *	| uiMaxDaysInMonth | 5    | 20     | 0          | 0%  |
- * 
+// * Bestimmen Sie mit Testwell CMT v(G), LOCpro und mittels eigener Rechnung c% Ihrer Funktionen
+// * 
+// *	| Funktion         | v(G) | LOCpro | Kommentare | c % |
+// *	| ---------------- | ---- | ------ | ---------- | --- |
+// *	| main             | 5    | 23     | 0          | 0%  |
+// *	| uiIsCorrectDate  | 6    | 9      | 0          | 0%  |
+// *	| uiIsLeapYear     | 4    | 10     | 0          | 0%  |
+// *	| uiMaxDaysInMonth | 5    | 20     | 0          | 0%  |
+// *
  */

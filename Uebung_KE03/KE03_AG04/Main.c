@@ -21,13 +21,12 @@ main(void)
 
 	printf("ValD: %lf\n", dValD);
 
-	/*
-	 * Erkennen Sie unter welcher Bedingung die Berechnung der Wurzel nicht funktioniert?
-	 * 
-	 * Wenn dValB - dValC < 0
-	 * 
-	 * Was könnte dies bedeuten? 
-	 * 
-	 * nan steht für not a number. Da eine negative Wurze zu den komplexen Zahlen gehört, kann sie nicht als reelle Zahl in dem kontext nicht darstllen.
-	 */
+	// * Erkennen Sie unter welcher Bedingung die Berechnung der Wurzel nicht funktioniert?
+	// * 
+	// * Wenn dValB - dValC < 0
+	// * 
+	// * Was könnte dies bedeuten? 
+	// * 
+	// * nan steht für not a number. Da eine negative Wurze zu den komplexen Zahlen gehört, kann sie nicht als reelle Zahl in dem kontext nicht darstllen.
+}
 }

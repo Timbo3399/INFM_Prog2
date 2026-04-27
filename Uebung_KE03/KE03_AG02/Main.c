@@ -19,7 +19,5 @@ int TestGlobal(void)
 	return iVar;
 }
 
-/*
- * Welche Variable verwendet Ihr Programm in main und in TestGlobal?
- * iVar = 42in main und = 72 in TestGlobal;
- */
+// * Welche Variable verwendet Ihr Programm in main und in TestGlobal?
+// * iVar = 42in main und = 72 in TestGlobal;

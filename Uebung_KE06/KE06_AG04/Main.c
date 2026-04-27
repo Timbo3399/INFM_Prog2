@@ -4,15 +4,13 @@ void DoCallbyReferenceArray1(int* pdA);
 void DoCallbyReferenceArray2(int pdA[]);
 void DoCallbyReferenceArray3(int pdA[]);
 
-/*
- * Rufen Sie anschließend eine der drei Funktionen erneut auf und übergeben Sie statt aiArray jetzt NULL. Was passiert?
- * 
- * Exception thrown: write access violation. pdA was nullptr.
- * 
- * Ist damit das obige Problem gelöst?
- * 
- * Nein es ist nicht glößt sondern nur dem eigentlich Problem ausgewichen 
- */
+// * Rufen Sie anschließend eine der drei Funktionen erneut auf und übergeben Sie statt aiArray jetzt NULL. Was passiert?
+// * 
+// * Exception thrown: write access violation. pdA was nullptr.
+// * 
+// * Ist damit das obige Problem gelöst?
+// * 
+// * Nein es ist nicht glößt sondern nur dem eigentlich Problem ausgewichen
 
 int main(void)
 {

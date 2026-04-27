@@ -16,17 +16,15 @@ double calculateVolume(double dR)
 	return dVolume;
 }
 
-/*
-mit #include <math.h>
--1 ergebt -4.188787
-0 ergebt 0
-1 ergebt 4.188787
-1.5 ergebt 14.137155
+//mit #include <math.h>
+//-1 ergebt -4.188787
+//0 ergebt 0
+//1 ergebt 4.188787
+//1.5 ergebt 14.137155
 
-ohne #include <math.h>
--1 ergebt -64808.907307 
-0 ergebt 0 
-1 ergebt -64808.907307 
-1.5 ergebt 6500.996907
-Da die Funktion pow() ohne die Einbindung der math.h-Bibliothek nicht definiert ist und deshalb zu einem undefinierten Verhalten führt.
-*/
+//ohne #include <math.h>
+//-1 ergebt -64808.907307 
+//0 ergebt 0 
+//1 ergebt -64808.907307 
+//1.5 ergebt 6500.996907
+//Da die Funktion pow() ohne die Einbindung der math.h-Bibliothek nicht definiert ist und deshalb zu einem undefinierten Verhalten führt.

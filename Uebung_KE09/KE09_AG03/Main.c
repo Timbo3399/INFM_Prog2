@@ -42,7 +42,5 @@ int main(void)
 	iY = POWER3(iX);
 	// Wait for user interaction
 	_getch();
-	return EXIT_SUCCESS;
-
-   return 0;
+	return 0;
 }

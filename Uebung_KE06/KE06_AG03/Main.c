@@ -27,7 +27,7 @@ int main(void)
 	printf("iTest: %d\n", iTest);
 
 
-	sRect_t sRect = { 1.f, 1.f };
+	sRect_t sRect = { 1.F, 1.F };
 	DoCallByValueStruct(sRect);
 	printf("sRect.fHeight: %f\n", sRect.fHeight);
 	DoCallByReferenceStruct(&sRect);
@@ -46,9 +46,9 @@ void DoCallByReference(int* piA) {
 
 void DoCallByValueStruct(sRect_t sR)
 {
-	sR.fHeight = 2.178f;
+	sR.fHeight = 2.178F;
 }
 
 void DoCallByReferenceStruct(psRect_t psR) {
-	psR->fHeight = 2.178f;
+	psR->fHeight = 2.178F;
 }

@@ -16,9 +16,11 @@ int main(void)
 		if (adR3[i]==0)
 		{
 			adR23[i] = 0;
-			continue;
 		}
-		adR23[i] = (cdR2 * adR3[i]) / (cdR2 + adR3[i]);
+		else
+		{
+			adR23[i] = (cdR2 * adR3[i]) / (cdR2 + adR3[i]);
+		}
 	}
 
 	for (int i = 0; i< ARRAY_LEN;i++)
