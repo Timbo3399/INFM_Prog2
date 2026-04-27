@@ -16,7 +16,7 @@ BreakBeforeBraces: Allman
 IndentCaseLabels: true
 
 # CL3 – Space after keywords (if, while, for, switch)
-SpaceBeforeParens: ControlStatements
+SpaceAfterKeywords: ControlStatements
 
 # CL4 – No space before function call parenthesis
 SpaceBeforeParens: ControlStatements

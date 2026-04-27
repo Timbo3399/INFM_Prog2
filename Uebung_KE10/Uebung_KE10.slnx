@@ -3,7 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="KE10_AG01/KE10_AG01.vcxproj" />
-  <Project Path="KE10_AG02/KE10_AG02.vcxproj" />
+  <Project Path="KE10_AG01/KE10_AG01.vcxproj" Id="1eecaae9-9fe3-46c3-8e87-ca85bd96f52e" />
+  <Project Path="KE10_AG02/KE10_AG02.vcxproj" Id="23f7f38f-2c2a-49fb-9180-dce7043ea4ae" />
   <Project Path="TaxDLL/TaxDLL.vcxproj" Id="d9b4c5bc-f6c9-4b1c-8130-4ef4e0366dbf" />
 </Solution>
